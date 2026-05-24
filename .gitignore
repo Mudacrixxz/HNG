@@ -1,0 +1,16 @@
+# Local/editor files
+.vscode/
+.idea/
+
+# OS files
+Thumbs.db
+Desktop.ini
+
+# Logs and temp files
+*.log
+*.tmp
+*.bak
+
+# Environment files that may contain secrets
+.env
+.env.*
