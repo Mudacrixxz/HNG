@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Analyst Memo</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; margin: 48px; color: #111; }
+    h1 { font-size: 22px; margin-bottom: 4px; }
+    h2 { font-size: 16px; margin-top: 22px; border-bottom: 1px solid #ccc; padding-bottom: 3px; }
+    p { margin: 8px 0; }
+    ul { margin-top: 6px; }
+    li { margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+  <h1>Analyst Memo: TradeZone Performance Review, 2023-2024</h1>
+  <p><strong>To:</strong> Head of Growth and Head of Seller Operations</p>
+  <p><strong>From:</strong> Data Analytics Team</p>
+  <p><strong>Subject:</strong> SQL-based review of customer growth, revenue, seller performance and data quality</p>
+
+  <h2>1. Executive Summary</h2>
+  <p>TradeZone grew strongly through 2024, with non-cancelled and non-returned quarterly revenue rising from N86.54 million in Q1 2024 to N262.62 million in Q4 2024. However, that growth is uneven: Lagos drives the largest customer acquisition volume, electronics dominate the highest-revenue products, and mid-rated products generate more revenue than high-rated products, which suggests the platform is scaling but not yet converting quality and seller experience into the strongest commercial advantage.</p>
+
+  <h2>2. Key Findings</h2>
+  <ul>
+    <li><strong>Growth is heavily led by Lagos, but conversion quality varies by state.</strong> Query 1 shows Lagos produced the highest number of 2024 sign-ups with 146 new customers and a 41.78% 30-day conversion rate. FCT followed with 92 sign-ups and a 34.78% conversion rate, while Kano had 58 sign-ups but only 25.86% converted within 30 days. This means acquisition volume alone is not enough; TradeZone should treat each state as a separate growth market and focus on improving activation where sign-ups are not quickly becoming buyers.</li>
+    <li><strong>Revenue accelerated sharply in 2024, with Q4 showing the strongest year-on-year quarterly growth.</strong> Query 4 shows Q4 2024 revenue reached N262.62 million across 754 orders, compared with N50.08 million in Q4 2023. This was the strongest revenue growth from 2023 to 2024 among all quarters. The result suggests that TradeZone entered 2025 with real commercial momentum, but leadership should check whether Q4 growth came from repeatable demand or from seasonal buying patterns and promotions.</li>
+    <li><strong>Product revenue is concentrated in electronics, while review performance does not perfectly match sales performance.</strong> Query 2 shows all top 10 products by 2024 revenue are electronics, led by HP Pavilion 15 Laptop Intel i5 - v2 at N21.23 million. Query 7 shows mid-rated products generated N358.24 million in revenue, more than high-rated products at N258.40 million. This is a warning sign for Seller Operations: customers are buying high-value products even when ratings are not the strongest, so poor product or seller experience could become a retention risk if demand continues growing.</li>
+  </ul>
+
+  <h2>3. Recommendations</h2>
+  <ul>
+    <li><strong>Action:</strong> Launch a 30-day activation campaign in Kano and Oyo focused on first-purchase incentives, onboarding messages and follow-up reminders for new customers. <strong>Owner:</strong> Head of Growth. <strong>Expected outcome within 60 to 90 days:</strong> raise Kano's 30-day conversion rate from 25.86% and Oyo's from 30.16% toward the current Lagos benchmark of 41.78%, improving the return on acquisition spend. This recommendation is based on Query 1.</li>
+    <li><strong>Action:</strong> Create a seller quality review for high-revenue, mid-rated products, starting with the electronics category and sellers attached to the top 10 revenue products. <strong>Owner:</strong> Head of Seller Operations. <strong>Expected outcome within 60 to 90 days:</strong> reduce the risk that fast-growing electronics sales create customer dissatisfaction, while moving more revenue from the mid-rated group into the high-rated group. This recommendation is based on Queries 2 and 7.</li>
+  </ul>
+
+  <h2>4. Data Quality Notes</h2>
+  <p>The first major issue was inconsistent formatting in city and product category fields. City values included variants such as Lagos, lagos, LAGOS, Lago s and Port-Harcourt, while product categories included misspellings such as Electronis and Fashon. I standardized these values before analysis so state-level acquisition, payment preference and product performance results would not be split across duplicate labels. If this decision was wrong, the biggest impact would be misallocated state or category totals.</p>
+  <p>The second major issue was missing price information. Four products had missing unit prices, which caused 97 order items to have missing unit prices or line totals and left 92 orders with missing total amounts after recalculation. I did not invent prices; those rows remain flagged in the data_quality_issues view and were excluded from revenue calculations where the total could not be trusted. If the missing prices later turn out to be material, total revenue and product rankings would be understated.</p>
+
+  <h2>5. What the Data Cannot Tell Us</h2>
+  <p>The current dataset cannot explain why certain customers fail to purchase within 30 days after signing up. It shows the conversion outcome by state, but it does not include marketing channel, campaign exposure, app or website session behavior, discount usage, product views, cart activity, delivery fee estimates or customer support contacts. To answer that business question, I would request acquisition-channel data, campaign spend and impressions, behavioral funnel events, discount and promotion records, and customer support interaction data linked to customer_id and signup_date.</p>
+</body>
+</html>

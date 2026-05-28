@@ -1,0 +1,237 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [ 4 0 R 6 0 R ] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 2913 >>
+stream
+BT
+/F1 10 Tf
+54 738 Td
+14 TL
+(Analyst Memo: TradeZone Performance Review, 2023-2024) Tj
+T*
+() Tj
+T*
+(To: Head of Growth and Head of Seller Operations) Tj
+T*
+() Tj
+T*
+(From: Data Analytics Team) Tj
+T*
+() Tj
+T*
+(Subject: SQL-based review of customer growth, revenue, seller performance and data quality) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(1. Executive Summary) Tj
+T*
+() Tj
+T*
+(TradeZone grew strongly through 2024, with non-cancelled and non-returned quarterly revenue) Tj
+T*
+(rising from N86.54 million in Q1 2024 to N262.62 million in Q4 2024. However, that growth is) Tj
+T*
+(uneven: Lagos drives the largest customer acquisition volume, electronics dominate the) Tj
+T*
+(highest-revenue products, and mid-rated products generate more revenue than high-rated) Tj
+T*
+(products, which suggests the platform is scaling but not yet converting quality and seller) Tj
+T*
+(experience into the strongest commercial advantage.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(2. Key Findings) Tj
+T*
+() Tj
+T*
+(Growth is heavily led by Lagos, but conversion quality varies by state. Query 1 shows Lagos) Tj
+T*
+(produced the highest number of 2024 sign-ups with 146 new customers and a 41.78% 30-day) Tj
+T*
+(conversion rate. FCT followed with 92 sign-ups and a 34.78% conversion rate, while Kano had) Tj
+T*
+(58 sign-ups but only 25.86% converted within 30 days. This means acquisition volume alone is) Tj
+T*
+(not enough; TradeZone should treat each state as a separate growth market and focus on) Tj
+T*
+(improving activation where sign-ups are not quickly becoming buyers.) Tj
+T*
+() Tj
+T*
+(Revenue accelerated sharply in 2024, with Q4 showing the strongest year-on-year quarterly) Tj
+T*
+(growth. Query 4 shows Q4 2024 revenue reached N262.62 million across 754 orders, compared) Tj
+T*
+(with N50.08 million in Q4 2023. This was the strongest revenue growth from 2023 to 2024) Tj
+T*
+(among all quarters. The result suggests that TradeZone entered 2025 with real commercial) Tj
+T*
+(momentum, but leadership should check whether Q4 growth came from repeatable demand or from) Tj
+T*
+(seasonal buying patterns and promotions.) Tj
+T*
+() Tj
+T*
+(Product revenue is concentrated in electronics, while review performance does not perfectly) Tj
+T*
+(match sales performance. Query 2 shows all top 10 products by 2024 revenue are electronics,) Tj
+T*
+(led by HP Pavilion 15 Laptop Intel i5 - v2 at N21.23 million. Query 7 shows mid-rated) Tj
+T*
+(products generated N358.24 million in revenue, more than high-rated products at N258.40) Tj
+T*
+(million. This is a warning sign for Seller Operations: customers are buying high-value) Tj
+T*
+(products even when ratings are not the strongest, so poor product or seller experience could) Tj
+T*
+(become a retention risk if demand continues growing.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(3. Recommendations) Tj
+T*
+ET
+
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 3044 >>
+stream
+BT
+/F1 10 Tf
+54 738 Td
+14 TL
+() Tj
+T*
+(Recommendation 1: Launch a 30-day activation campaign in Kano and Oyo focused on) Tj
+T*
+(first-purchase incentives, onboarding messages and follow-up reminders for new customers.) Tj
+T*
+(Owner: Head of Growth. Expected outcome within 60 to 90 days: raise Kano's 30-day conversion) Tj
+T*
+(rate from 25.86% and Oyo's from 30.16% toward the current Lagos benchmark of 41.78%,) Tj
+T*
+(improving the return on acquisition spend. This recommendation is based on Query 1.) Tj
+T*
+() Tj
+T*
+(Recommendation 2: Create a seller quality review for high-revenue, mid-rated products,) Tj
+T*
+(starting with the electronics category and sellers attached to the top 10 revenue products.) Tj
+T*
+(Owner: Head of Seller Operations. Expected outcome within 60 to 90 days: reduce the risk) Tj
+T*
+(that fast-growing electronics sales create customer dissatisfaction, while moving more) Tj
+T*
+(revenue from the mid-rated group into the high-rated group. This recommendation is based on) Tj
+T*
+(Queries 2 and 7.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(4. Data Quality Notes) Tj
+T*
+() Tj
+T*
+(The first major issue was inconsistent formatting in city and product category fields. City) Tj
+T*
+(values included variants such as Lagos, lagos, LAGOS, Lago s and Port-Harcourt, while) Tj
+T*
+(product categories included misspellings such as Electronis and Fashon. I standardized these) Tj
+T*
+(values before analysis so state-level acquisition, payment preference and product) Tj
+T*
+(performance results would not be split across duplicate labels. If this decision was wrong,) Tj
+T*
+(the biggest impact would be misallocated state or category totals.) Tj
+T*
+() Tj
+T*
+(The second major issue was missing price information. Four products had missing unit prices,) Tj
+T*
+(which caused 97 order items to have missing unit prices or line totals and left 92 orders) Tj
+T*
+(with missing total amounts after recalculation. I did not invent prices; those rows remain) Tj
+T*
+(flagged in the data_quality_issues view and were excluded from revenue calculations where) Tj
+T*
+(the total could not be trusted. If the missing prices later turn out to be material, total) Tj
+T*
+(revenue and product rankings would be understated.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(5. What the Data Cannot Tell Us) Tj
+T*
+() Tj
+T*
+(The current dataset cannot explain why certain customers fail to purchase within 30 days) Tj
+T*
+(after signing up. It shows the conversion outcome by state, but it does not include) Tj
+T*
+(marketing channel, campaign exposure, app or website session behavior, discount usage,) Tj
+T*
+(product views, cart activity, delivery fee estimates or customer support contacts. To answer) Tj
+T*
+(that business question, I would request acquisition-channel data, campaign spend and) Tj
+T*
+(impressions, behavioral funnel events, discount and promotion records, and customer support) Tj
+T*
+(interaction data linked to customer_id and signup_date.) Tj
+T*
+() Tj
+T*
+ET
+
+endstream
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000123 00000 n 
+0000000193 00000 n 
+0000000319 00000 n 
+0000003284 00000 n 
+0000003410 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+6506
+%%EOF
