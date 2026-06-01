@@ -1,6 +1,6 @@
 /*
 Part A: Data Cleaning & Preparation
-Database: TradeZone
+Database: TradeZone / HNG1
 
 Notes:
 - Date columns are PostgreSQL DATE/TIMESTAMP types, so they are already stored
